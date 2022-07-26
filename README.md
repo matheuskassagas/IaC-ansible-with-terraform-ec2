@@ -7,7 +7,7 @@
 ~> Conecte na instancia ~> Cliente SSH
 ```
 chmod 400 key.pem
-ssh -i "key.pem" ubuntu@..
+ssh -i "key.pem" ubuntu@<ip_public_dns>
 ```
 
 **Necessario subir a instancia EC2 antes**

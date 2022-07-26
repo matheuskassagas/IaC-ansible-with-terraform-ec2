@@ -45,8 +45,6 @@ resource "aws_instance" "app_server" {
   key_name      = var.key_ssh # # chave para acessar instancia EC2 
   # # user_data       = local.path_sh # # Script que ira ser execultado dentro da instancia
   # # security_groups = [aws_security_group.ec2_main.arn]
-
-
 }
 
 resource "aws_key_pair" "chaveDEV" {
