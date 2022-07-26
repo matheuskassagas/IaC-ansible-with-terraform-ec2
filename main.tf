@@ -19,6 +19,7 @@ resource "aws_instance" "app_server"{
   instance_type = "t2.micro"
   key_name      = "key"         # # chave para acessar instancia EC2 
   user_data     = local.path_sh # # Script que ira ser execultado dentro da instancia
+  security_groups = [aws_security_group.ec2.id]
   
   tags = {
     Name = "Ansible with Terraform"
