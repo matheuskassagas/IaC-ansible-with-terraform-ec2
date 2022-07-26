@@ -16,7 +16,15 @@ ssh -i "key.pem" ubuntu@..
 ansible-playbook playbook.yml -u ubuntu --private-key key.pem -i hosts.yml
 ```
 
-# Gerar Chave
+# Gerar Chave para prod e dev
 ```
 ssh-keygen
+$<nomechave>
+```
+
+```
+resource "aws_key_pair" "chaveDEV" {
+  key_name   = "DEV"
+  public_key = file("../DEV/IaC-DEV.pub")
+}
 ```

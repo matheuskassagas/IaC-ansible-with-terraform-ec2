@@ -1,3 +1,3 @@
 locals {
-  path_sh = ".command.sh"
+  path_sh = "../script/command.sh"
 }
