@@ -2,22 +2,22 @@
   tasks:
   - name: Instalando o python3, virtualenv
     apt:
-      pkg:
+      pkg: # # pacotes
       - python3
       - virtualenv
-      update_cache: yes
-    become: true
+      update_cache: yes # # atualizar os pct 
+    become: true # # execulte como root 
   - name: Instalando dependencias com pip (Django e Django Rest)
     pip:
       virtualenv: /home/ubuntu/tcc/venv
-      name:
+      name: # # pcts
         - django
         - djangorestframework
   - name: Iniciando o projeto
     shell: '. /home/ubuntu/tcc/venv/bin/activate; django-admin startproject setup /home/ubuntu/tcc/'
   - name: Alterando o hosts do settings
-    lineinfile:
-      path: /home/ubuntu/tcc/setup/settings.py
-      regexp: 'ALLOWED_HOSTS'
-      line: 'ALLOWED_HOSTS = ["*"]'
+    lineinfile: # # acesar uma linha de codigo para alteracao
+      path: /home/ubuntu/tcc/setup/settings.py # # caminho
+      regexp: 'ALLOWED_HOSTS' # # especificando onde
+      line: 'ALLOWED_HOSTS = ["*"]' # # alterar para 
       backrefs: yes

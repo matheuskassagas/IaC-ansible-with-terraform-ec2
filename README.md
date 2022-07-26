@@ -10,7 +10,13 @@ chmod 400 key.pem
 ssh -i "key.pem" ubuntu@..
 ```
 
+**Necessario subir a instancia EC2 antes**
 # Como execultar o playbook 
 ```
 ansible-playbook playbook.yml -u ubuntu --private-key key.pem -i hosts.yml
+```
+
+# Gerar Chave
+```
+ssh-keygen
 ```
