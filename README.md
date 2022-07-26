@@ -9,3 +9,8 @@
 chmod 400 key.pem
 ssh -i "key.pem" ubuntu@..
 ```
+
+# Como execultar o playbook 
+```
+ansible-playbook playbook.yml -u ubuntu --private-key key.pem -i hosts.yml
+```
