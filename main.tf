@@ -25,3 +25,8 @@ resource "aws_instance" "app_server"{
     Name = "Ansible with Terraform"
   }
 }
+
+resource "aws_key_pair" "chaveDEV" {
+  key_name   = "DEV"
+  public_key = file("../DEV/IaC-DEV.pub")
+}
