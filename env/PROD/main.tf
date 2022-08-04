@@ -4,4 +4,7 @@ module "aws-prod" {
   region_aws    = "us-east-1"
   key_ssh       = "IaC-Prod"
   grupoDeSeguranca = "Producao"
+  minimo = 1
+  maximo = 10
+  nomeGrupo = "Prod"
 } 

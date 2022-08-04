@@ -29,3 +29,4 @@ resource "aws_key_pair" "chaveDEV" {
   public_key = file("../DEV/IaC-DEV.pub")
 }
 ```
+

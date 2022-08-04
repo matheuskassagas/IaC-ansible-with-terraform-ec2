@@ -13,3 +13,15 @@ variable "instance_type" {
 variable "" {
   type = string
 }
+
+variable "minimo" {
+  type = number
+}
+
+variable "maximo" {
+  type = number
+}
+
+variable "nomeGrupo" {
+  type = string
+}
