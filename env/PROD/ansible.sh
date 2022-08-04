@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd /home/ubuntu # #  acessa o diretorio 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py # # baixa o pacote do pip
 sudo python3 get-pip.py # # instala python pip
