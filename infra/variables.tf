@@ -9,3 +9,7 @@ variable "key_ssh" {
 variable "instance_type" {
   type = string
 }
+
+variable "" {
+  type = string
+}

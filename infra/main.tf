@@ -39,15 +39,28 @@ provider "aws" {
   }
 }
 
-resource "aws_instance" "app_server" {
-  ami           = "ami-03d5c68bab01f3496"
+
+resource "aws_launch_template" "maquina" { # # Can be used to create instances or auto scaling groups
+  image_id = "ami-03d5c68bab01f3496"
   instance_type = var.instance_type
-  key_name      = var.key_ssh # # chave para acessar instancia EC2 
-  # # user_data       = local.path_sh # # Script que ira ser execultado dentro da instancia
-  # # security_groups = [aws_security_group.ec2_main.arn]
+  key_name = var.key_ssh
+  tags = {
+    Name = "Terraform Ansible Python"
+  }
+  security_group_names = [ var.grupoDeSeguranca ]
 }
+
+
+# resource "aws_instance" "app_server" {
+#   ami           = "ami-03d5c68bab01f3496"
+#   instance_type = var.instance_type
+#   key_name      = var.key_ssh # # chave para acessar instancia EC2 
+#   # user_data       = local.path_sh # # Script que ira ser execultado dentro da instancia
+#   # security_groups = [aws_security_group.ec2_main.arn]
+# }
 
 resource "aws_key_pair" "chaveDEV" {
   key_name   = var.key_ssh
   public_key = file("${var.key_ssh}.pub")
 }
+
